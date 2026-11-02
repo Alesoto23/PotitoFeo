@@ -83,6 +83,12 @@ mean(!U &amp; !Y, na.rm = TRUE)</pre>
 </table>
 <pre><span class="c"># Lab 2 P4: ¿de cuántas maneras se obtiene el CONJUNTO de 32 corredoras de 117?</span>
 choose(117, 32)        <span class="c"># orden NO importa → (117 sobre 32)</span></pre>
+<table>
+<tr><th>Situación</th><th>En R</th></tr>
+<tr><td>Repartir n en g grupos <b>distintos</b> de k cada uno (carreras 1, 2, 3, 4)</td><td><code>factorial(32)/factorial(8)^4</code> = <code>choose(32,8)*choose(24,8)*choose(16,8)*choose(8,8)</code></td></tr>
+<tr><td>Una persona fija: elijo su grupo y sus compañeras, luego el resto</td><td><code>choose(4,1)*choose(31,7)*choose(24,8)*choose(16,8)</code> (da lo mismo)</td></tr>
+<tr><td>Que 2 personas concretas ocupen los 2 primeros puestos de una carrera de 8</td><td><code>1/choose(8,2)</code> = 1/28</td></tr>
+</table>
 <div class="tip"><b>Probabilidad clásica</b> (todos los casos igual de probables): P = casos favorables / casos posibles, ambos contados con <code>choose</code> o <code>factorial</code>.</div>
 
 <h2>3. Probabilidad empírica</h2>
@@ -207,6 +213,14 @@ round(mean(E[!M], na.rm = TRUE), 2)   <span class="c"># 0.08 vs P(E) 0.08 → in
 <h3>P6 · Gráfica comparativa (gamma)</h3>
 <pre><span class="c"># Marcar: sesgada a la derecha · P emp(Z&gt;50) ≥ 0.25 (0.28) · P teo(Z≥50) ≥ 0.25 (0.27)</span>
 <span class="c"># No marcar: IQR teórico (33.78) &lt; empírico (35.74) · n y máximo / 0.59 no se leen en la gráfica</span></pre>
+
+<h3>Lab 2 · P4 a P8 (Atletismo: conteo y probabilidad clásica)</h3>
+<pre>table(DF$País)[c("Perú", "Guatemala", "Trinidad")]           <span class="c"># 3, 1, 2</span>
+choose(117, 32)                                             <span class="c"># P4: conjunto de 32 de 117</span>
+round(sum(DF$País == "Perú") / nrow(DF), 2)                 <span class="c"># P5: 3/32 = 0.09</span>
+factorial(32) / factorial(8)^4                              <span class="c"># P6: = choose(32,8)…choose(8,8) = 4·choose(31,7)…</span>
+<span class="c"># P7: 1 sola guatemalteca → probabilidad 1</span>
+round(1 / choose(8, 2), 2)                                  <span class="c"># P8: 1/28 = 0.04</span></pre>
 
 <h2>10. Receta rápida para el examen</h2>
 <table>
