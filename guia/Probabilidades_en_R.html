@@ -222,6 +222,17 @@ factorial(32) / factorial(8)^4                              <span class="c"># P6
 <span class="c"># P7: 1 sola guatemalteca → probabilidad 1</span>
 round(1 / choose(8, 2), 2)                                  <span class="c"># P8: 1/28 = 0.04</span></pre>
 
+<h3>Práctica Toyocars · P4 a P8</h3>
+<table>
+<tr><th>Pregunta</th><th>Clave</th><th>En R</th><th>Resp.</th></tr>
+<tr><td>P4 Bayes: P(dólares | no le gustan eléctricos)</td><td>P(D) del archivo; P(noE|D)=0.75, P(noE|S)=0.50</td><td><code>0.75*pD/(0.75*pD + 0.5*(1-pD))</code></td><td>0.94</td></tr>
+<tr><td>P5 "al menos uno" compra (independientes)</td><td>1 − P(ninguno)</td><td><code>1 - prod(1 - c(.2,.3,.4,.5))</code></td><td>0.832</td></tr>
+<tr><td>P6 V/F</td><td>Independiente ≠ disjunto · P(A∪B)=P(A)+P(B)−P(A∩B) · Bernoulli = Binomial con n=1</td><td>—</td><td>FFF</td></tr>
+<tr><td>P7 "a lo más 5" de 20 con reposición</td><td>Binomial, P(X ≤ 5)</td><td><code>pbinom(5, 20, p)</code></td><td>según p</td></tr>
+<tr><td>P8 revisar 7 hasta el 1er éxito</td><td>Geométrica: 6 fracasos</td><td><code>dgeom(6, 36/90)</code></td><td>0.02</td></tr>
+</table>
+<div class="tip"><b>Frases de distribuciones:</b> "hasta encontrar el primero" → geométrica (<code>dgeom(k-1, p)</code>) · "de n seleccionados con reposición, a lo más x" → binomial (<code>pbinom(x, n, p)</code>) · "al menos x" → <code>1 - pbinom(x-1, n, p)</code> · "al menos uno" de varios independientes → <code>1 - prod(1 - p)</code>.</div>
+
 <h2>10. Receta rápida para el examen</h2>
 <table>
 <tr><th>Paso</th><th>Qué hacer</th></tr>

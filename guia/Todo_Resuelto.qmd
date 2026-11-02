@@ -251,3 +251,75 @@ sum(DF$País == "Guatemala")     # 1 sola guatemalteca -> probabilidad 1
 ```{r}
 round(1 / choose(8, 2), 2)      # 0.04
 ```
+
+# Práctica · Toyocars (enunciados y respuestas)
+
+> En este examen la base limpia se llama **DFL**. Las preguntas que no usan el archivo se resuelven solo con fórmulas.
+
+## Pregunta 4
+
+**Enunciado:** *(Use el archivo DFL)* Se encuestó a todos los hombres que anotaron su género. Del archivo se dedujo qué porcentaje de hombres pagó en dólares; el resto pagó en soles. De los que pagaron en dólares, a un 25% le gustan los vehículos eléctricos; de los que pagaron en soles, a un 50%. Si se selecciona al azar un cliente hombre y se sabe que **no** le gustan los eléctricos, ¿cuál es la probabilidad de que haya pagado en dólares?
+
+**Respuesta:** **0.94** ✔ (Bayes)
+
+```{r}
+#| eval: false
+# Ajusta los nombres de columnas y categorías a los de tu DFL
+H  <- DFL %>% filter(Genero == "Masculino")
+pD <- mean(H$Moneda == "Dólares", na.rm = TRUE)     # P(dólares) entre hombres (≈ 0.91)
+pS <- 1 - pD                                        # P(soles)
+
+# P(D | no eléctrico) = P(noE | D) P(D) / [P(noE | D) P(D) + P(noE | S) P(S)]
+round(0.75 * pD / (0.75 * pD + 0.50 * pS), 2)       # 0.94
+```
+
+## Pregunta 5
+
+**Enunciado:** *(No se usa DFL)* Cuatro clientes A, B, C y D entran independientemente a Toyocars. La probabilidad de que cada uno compre es 0.2, 0.3, 0.4 y 0.5. Calcular la probabilidad de que **al menos uno** compre.
+
+**Respuesta:** **0.832** ✔ ("al menos uno" = 1 − ninguno)
+
+```{r}
+p <- c(0.2, 0.3, 0.4, 0.5)
+1 - prod(1 - p)                  # 0.832
+```
+
+## Pregunta 6
+
+**Enunciado:** Verdadero o falso:
+
+1. Dos eventos son independientes cuando no tienen intersección. → **F** (eso es ser *disjuntos*; independientes es P(A∩B) = P(A)·P(B)).
+2. Siempre se cumple que P(A ∪ B) = P(A) + P(B). → **F** (solo si son disjuntos; en general se resta P(A∩B)).
+3. Toda variable con distribución Binomial es también Bernoulli. → **F** (al revés: una Bernoulli es una Binomial con n = 1).
+
+**Respuesta:** **FFF** ✔
+
+## Pregunta 7
+
+**Enunciado:** *(Use DFL, el archivo limpio)* Deduzca la probabilidad de que la venta se haya hecho a una persona **jurídica**. Si de todos los registros se seleccionan 20 **con reposición**, ¿cuál es la probabilidad de encontrar **a lo más 5** ventas a personas jurídicas?
+
+**Respuesta:** depende de p del archivo (**0.50 fue marcada incorrecta**). Binomial con n = 20: "a lo más 5" = P(X ≤ 5).
+
+```{r}
+#| eval: false
+p <- mean(DFL$TipoCliente == "Jurídica", na.rm = TRUE)   # ajusta nombre de columna/categoría
+round(pbinom(5, size = 20, prob = p), 2)                 # P(X <= 5)
+```
+
+```{r}
+# Qué p da cada alternativa (para comprobar tu resultado):
+# 0.95 -> p ≈ 0.14 | 0.88 -> p ≈ 0.17 | 0.72 -> p ≈ 0.22 | 0.64 -> p ≈ 0.24 | 0.50 -> p ≈ 0.28
+round(pbinom(5, 20, c(0.14, 0.174, 0.224, 0.244, 0.279)), 2)
+```
+
+## Pregunta 8
+
+**Enunciado:** *(No se usa el archivo)* De cada 90 clientes, 36 prefieren automáticos. Se revisan registros hasta encontrar al primero que prefiera automáticos. Probabilidad de que tengan que revisar **7 expedientes** para encontrar el primero.
+
+**Respuesta:** **0.02** ✔ (geométrica: 6 fracasos y luego el éxito)
+
+```{r}
+p <- 36 / 90                     # 0.4
+round(dgeom(6, p), 2)            # R cuenta FRACASOS antes del éxito: 7 revisiones = 6 fracasos -> 0.02
+round((1 - p)^6 * p, 2)          # misma cuenta a mano
+```
