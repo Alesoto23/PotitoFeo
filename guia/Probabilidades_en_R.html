@@ -74,6 +74,17 @@ mean(!(X &amp; Y) &amp; !(U | O), na.rm = TRUE)
 mean(!U &amp; !Y, na.rm = TRUE)</pre>
 <div class="tip"><b>Leyes de De Morgan</b> (sirven para comprobar):  <code>!(A &amp; B)</code> = <code>!A | !B</code>   y   <code>!(A | B)</code> = <code>!A &amp; !B</code>.  Si al calcular ambas formas da el mismo número, lo hiciste bien.</div>
 
+<h2>2b. Conteo (combinatoria)</h2>
+<table>
+<tr><th>Pregunta clave</th><th>Técnica</th><th>Fórmula</th><th>En R</th></tr>
+<tr><td>¿Importa el orden? <b>NO</b> ("conjunto", "grupo", "comité", "seleccionar")</td><td>Combinaciones</td><td>(n sobre k) = n! / (k!(n−k)!)</td><td><code>choose(n, k)</code></td></tr>
+<tr><td>¿Importa el orden? <b>SÍ</b> ("1º, 2º, 3º", "podio", "puestos distintos")</td><td>Variaciones</td><td>V(n,k) = n! / (n−k)!</td><td><code>factorial(n)/factorial(n-k)</code></td></tr>
+<tr><td>Ordenar a <b>todos</b> los n</td><td>Permutaciones</td><td>n!</td><td><code>factorial(n)</code></td></tr>
+</table>
+<pre><span class="c"># Lab 2 P4: ¿de cuántas maneras se obtiene el CONJUNTO de 32 corredoras de 117?</span>
+choose(117, 32)        <span class="c"># orden NO importa → (117 sobre 32)</span></pre>
+<div class="tip"><b>Probabilidad clásica</b> (todos los casos igual de probables): P = casos favorables / casos posibles, ambos contados con <code>choose</code> o <code>factorial</code>.</div>
+
 <h2>3. Probabilidad empírica</h2>
 <p>Probabilidad empírica = proporción de filas que cumplen el evento. La media de un vector TRUE/FALSE es la proporción de TRUE.</p>
 <pre>X &lt;- DF$Streamers &gt; 10000
