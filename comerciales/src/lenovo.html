@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;background:#000;font-family:Inter,sans-serif;color:#fff}
+.scene{position:absolute;inset:0;overflow:hidden;visibility:hidden}
+.bg{position:absolute;inset:-40px}
+.center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.logo{background:#E2231A;color:#fff;font-weight:800;font-size:92px;letter-spacing:-3px;padding:6px 38px 14px}
+.logo.sm{font-size:54px;padding:4px 24px 9px;letter-spacing:-2px}
+.claim{font-size:34px;font-weight:300;margin-top:30px;letter-spacing:1px}
+.big{font-size:58px;font-weight:800;letter-spacing:-1.5px}
+.mid{font-size:34px;font-weight:300;margin-top:18px;opacity:.85}
+.dots{display:flex;gap:18px;margin-top:46px}
+.dots span{width:120px;height:8px;border-radius:4px}
+.split{position:absolute;inset:0;display:flex;align-items:center;padding:0 80px;gap:60px}
+.split.rev{flex-direction:row-reverse}
+.art{width:560px;flex:none}
+.txt{flex:1}
+.tag{font-size:16px;font-weight:700;letter-spacing:4px;text-transform:uppercase}
+.name{font-size:96px;font-weight:900;letter-spacing:-3px;line-height:1;margin:14px 0 10px}
+.head{font-size:36px;font-weight:300;margin-bottom:28px}
+.chips{display:flex;flex-direction:column;gap:12px}
+.chip{display:inline-flex;align-items:center;gap:14px;font-size:22px;font-weight:600}
+.chip i{width:12px;height:12px;border-radius:50%;flex:none}
+.pos{position:absolute;left:80px;bottom:40px;font-size:15px;letter-spacing:2px;text-transform:uppercase;opacity:.75;padding:8px 16px;border:1px solid currentColor;border-radius:30px}
+.grid{display:flex;gap:22px;margin-top:10px}
+.card{width:206px;height:150px;border-radius:14px;padding:18px;text-align:left;display:flex;flex-direction:column;justify-content:space-between}
+.card b{font-size:30px;font-weight:900;letter-spacing:-1px}
+.card small{font-size:15px;opacity:.85;line-height:1.3}
+</style></head><body>
+
+<!-- 1. Apertura -->
+<section class="scene" data-start="0" data-end="4.6">
+  <div class="bg" style="background:radial-gradient(circle at 50% 50%,#2a0505 0%,#000 65%)"></div>
+  <div class="center">
+    <div class="logo" data-d="0.3" data-t="scale">Lenovo</div>
+    <div class="claim" data-d="1.4">Smarter technology for all</div>
+  </div>
+</section>
+
+<!-- 2. Idea central -->
+<section class="scene" data-start="4.4" data-end="8.8">
+  <div class="bg" style="background:linear-gradient(135deg,#0d0d0d,#1b1b1b)"></div>
+  <div class="center">
+    <div class="big" data-d="0.2">No todos necesitan lo mismo.</div>
+    <div class="mid" data-d="1.2">Por eso hay un Lenovo para cada persona.</div>
+    <div class="dots">
+      <span data-d="2.0" data-t="wipe" style="background:#E2231A"></span>
+      <span data-d="2.2" data-t="wipe" style="background:#00E5FF"></span>
+      <span data-d="2.4" data-t="wipe" style="background:#39FF88"></span>
+      <span data-d="2.6" data-t="wipe" style="background:#C9A46A"></span>
+      <span data-d="2.8" data-t="wipe" style="background:#3D8BFF"></span>
+    </div>
+  </div>
+</section>
+
+<!-- 3. ThinkPad -->
+<section class="scene" data-start="8.6" data-end="15.2">
+  <div class="bg" style="background:radial-gradient(circle at 25% 50%,#1e1e1e,#050505 70%)"></div>
+  <div class="split">
+    <svg class="art" viewBox="0 0 400 270" data-d="0.1" data-t="left">
+      <rect x="55" y="8" width="290" height="190" rx="6" fill="#111" stroke="#333" stroke-width="2"/>
+      <rect x="67" y="20" width="266" height="164" fill="#0e1a24"/>
+      <g id="tpBars">
+        <rect x="85" y="150" width="26" height="20" fill="#E2231A"/><rect x="121" y="130" width="26" height="40" fill="#fff" opacity=".8"/>
+        <rect x="157" y="110" width="26" height="60" fill="#fff" opacity=".8"/><rect x="193" y="90" width="26" height="80" fill="#fff" opacity=".8"/>
+        <rect x="229" y="70" width="26" height="100" fill="#fff" opacity=".8"/><rect x="265" y="45" width="26" height="125" fill="#E2231A"/>
+      </g>
+      <rect x="85" y="32" width="120" height="8" rx="4" fill="#fff" opacity=".5"/>
+      <path d="M15 200 H385 L365 240 H35 Z" fill="#161616" stroke="#2c2c2c" stroke-width="2"/>
+      <g fill="#262626">
+        <rect x="70" y="207" width="260" height="7" rx="2"/><rect x="66" y="217" width="268" height="7" rx="2"/><rect x="62" y="227" width="276" height="7" rx="2"/>
+      </g>
+      <circle cx="200" cy="221" r="4" fill="#E2231A"/>
+      <text x="300" y="194" fill="#888" font-size="9" font-family="Inter" font-style="italic" font-weight="700">ThinkPad</text>
+    </svg>
+    <div class="txt">
+      <div class="tag" style="color:#E2231A" data-d="0.4">Para profesionales y empresas</div>
+      <div class="name" data-d="0.6">ThinkPad</div>
+      <div class="head" data-d="1.0">Para quienes no pueden fallar.</div>
+      <div class="chips">
+        <div class="chip" data-d="1.6" data-t="right"><i style="background:#E2231A"></i>Durabilidad con pruebas de grado militar</div>
+        <div class="chip" data-d="1.9" data-t="right"><i style="background:#E2231A"></i>Seguridad empresarial</div>
+        <div class="chip" data-d="2.2" data-t="right"><i style="background:#E2231A"></i>Teclado legendario y TrackPoint</div>
+      </div>
+    </div>
+  </div>
+  <div class="pos" style="color:#E2231A" data-d="2.8">Posicionamiento · por usuario + atributos</div>
+</section>
+
+<!-- 4. Legion -->
+<section class="scene" data-start="15" data-end="21.4">
+  <div class="bg" style="background:radial-gradient(circle at 75% 50%,#0b2340,#02040a 70%)"></div>
+  <div class="split rev">
+    <svg class="art" viewBox="0 0 400 270" data-d="0.1" data-t="right">
+      <defs><linearGradient id="rgb" x1="0" x2="1"><stop offset="0" stop-color="#00E5FF"/><stop offset=".5" stop-color="#7B2BFF"/><stop offset="1" stop-color="#FF2BD6"/></linearGradient></defs>
+      <rect x="55" y="8" width="290" height="190" rx="8" fill="#0a0d14" stroke="#1d2a40" stroke-width="2"/>
+      <rect x="67" y="20" width="266" height="164" fill="#030612"/>
+      <g id="lgLines" stroke="url(#rgb)" stroke-width="3" fill="none">
+        <path d="M200 102 L67 20"/><path d="M200 102 L333 20"/><path d="M200 102 L67 184"/><path d="M200 102 L333 184"/>
+        <path d="M200 102 L67 102"/><path d="M200 102 L333 102"/><path d="M200 102 L200 20"/><path d="M200 102 L200 184"/>
+      </g>
+      <circle id="lgCore" cx="200" cy="102" r="14" fill="#00E5FF"/>
+      <path d="M15 200 H385 L365 240 H35 Z" fill="#0c111b" stroke="#1d2a40" stroke-width="2"/>
+      <g id="lgKeys"><rect x="70" y="207" width="260" height="7" rx="2" fill="url(#rgb)"/><rect x="66" y="217" width="268" height="7" rx="2" fill="url(#rgb)"/><rect x="62" y="227" width="276" height="7" rx="2" fill="url(#rgb)"/></g>
+    </svg>
+    <div class="txt">
+      <div class="tag" style="color:#00E5FF" data-d="0.4">Para gamers exigentes</div>
+      <div class="name" data-d="0.6" style="background:linear-gradient(90deg,#00E5FF,#FF2BD6);-webkit-background-clip:text;color:transparent">Legion</div>
+      <div class="head" data-d="1.0">Para los que juegan en serio.</div>
+      <div class="chips">
+        <div class="chip" data-d="1.6" data-t="left"><i style="background:#00E5FF"></i>Máximo rendimiento</div>
+        <div class="chip" data-d="1.9" data-t="left"><i style="background:#7B2BFF"></i>Refrigeración avanzada</div>
+        <div class="chip" data-d="2.2" data-t="left"><i style="background:#FF2BD6"></i>Pantallas de alta frecuencia</div>
+      </div>
+    </div>
+  </div>
+  <div class="pos" style="color:#00E5FF;left:auto;right:80px" data-d="2.8">Posicionamiento · por usuario + estilo de vida gamer</div>
+</section>
+
+<!-- 5. LOQ -->
+<section class="scene" data-start="21.2" data-end="26.8">
+  <div class="bg" style="background:radial-gradient(circle at 25% 50%,#06331f,#020a06 70%)"></div>
+  <div class="split">
+    <svg class="art" viewBox="0 0 400 270" data-d="0.1" data-t="left">
+      <rect x="55" y="8" width="290" height="190" rx="8" fill="#0b120e" stroke="#1d3a2a" stroke-width="2"/>
+      <rect x="67" y="20" width="266" height="164" fill="#03100a"/>
+      <g id="loqBars" fill="#39FF88">
+        <rect x="90" y="60" width="0" height="14" rx="7"/><rect x="90" y="95" width="0" height="14" rx="7" opacity=".7"/><rect x="90" y="130" width="0" height="14" rx="7" opacity=".45"/>
+      </g>
+      <path d="M15 200 H385 L365 240 H35 Z" fill="#0f1a14" stroke="#1d3a2a" stroke-width="2"/>
+      <g fill="#39FF88" opacity=".55"><rect x="70" y="207" width="260" height="7" rx="2"/><rect x="66" y="217" width="268" height="7" rx="2"/><rect x="62" y="227" width="276" height="7" rx="2"/></g>
+    </svg>
+    <div class="txt">
+      <div class="tag" style="color:#39FF88" data-d="0.4">Para quienes empiezan a jugar</div>
+      <div class="name" data-d="0.6" style="color:#39FF88">LOQ</div>
+      <div class="head" data-d="1.0">Tu entrada al gaming.</div>
+      <div class="chips">
+        <div class="chip" data-d="1.6" data-t="right"><i style="background:#39FF88"></i>Potencia gamer real</div>
+        <div class="chip" data-d="1.9" data-t="right"><i style="background:#39FF88"></i>Precio accesible</div>
+        <div class="chip" data-d="2.2" data-t="right"><i style="background:#39FF88"></i>Tecnología heredada de Legion</div>
+      </div>
+    </div>
+  </div>
+  <div class="pos" style="color:#39FF88" data-d="2.6">Posicionamiento · calidad / precio</div>
+</section>
+
+<!-- 6. Yoga -->
+<section class="scene" data-start="26.6" data-end="32.8">
+  <div class="bg" style="background:linear-gradient(135deg,#f7f1e8,#e7dccb)"></div>
+  <div class="split rev" style="color:#2b2418">
+    <svg class="art" viewBox="0 0 400 290" data-d="0.1" data-t="right">
+      <g id="ygLid" style="transform-origin:200px 210px">
+        <rect x="65" y="22" width="270" height="186" rx="12" fill="#c9b79a"/>
+        <rect x="75" y="32" width="250" height="166" rx="4" fill="#fffaf2"/>
+        <path id="ygStroke" d="M100 160 C140 60, 190 190, 230 90 S 300 70, 300 130" stroke="#C9A46A" stroke-width="7" fill="none" stroke-linecap="round" stroke-dasharray="420" stroke-dashoffset="420"/>
+        <circle cx="120" cy="70" r="16" fill="#e7a46a" opacity=".7"/><circle cx="150" cy="70" r="16" fill="#8fb3a8" opacity=".7"/>
+      </g>
+      <rect x="40" y="208" width="320" height="16" rx="8" fill="#b9a585"/>
+      <rect x="180" y="212" width="40" height="8" rx="4" fill="#a8946f"/>
+    </svg>
+    <div class="txt">
+      <div class="tag" style="color:#a07a3c" data-d="0.4">Para creativos con estilo</div>
+      <div class="name" data-d="0.6" style="font-weight:300;letter-spacing:-1px">Yoga</div>
+      <div class="head" data-d="1.0">Para los que crean sin límites.</div>
+      <div class="chips">
+        <div class="chip" data-d="1.6" data-t="left"><i style="background:#C9A46A"></i>Diseño premium</div>
+        <div class="chip" data-d="1.9" data-t="left"><i style="background:#C9A46A"></i>2 en 1: laptop, tablet, carpa</div>
+        <div class="chip" data-d="2.2" data-t="left"><i style="background:#C9A46A"></i>Ligera y elegante</div>
+      </div>
+    </div>
+  </div>
+  <div class="pos" style="color:#a07a3c;left:auto;right:80px" data-d="2.8">Posicionamiento · estilo de vida + diseño</div>
+</section>
+
+<!-- 7. IdeaPad -->
+<section class="scene" data-start="32.6" data-end="38.4">
+  <div class="bg" style="background:linear-gradient(135deg,#e9f2ff,#cfe2ff)"></div>
+  <div class="split" style="color:#0f2547">
+    <svg class="art" viewBox="0 0 400 270" data-d="0.1" data-t="left">
+      <rect x="55" y="8" width="290" height="190" rx="8" fill="#9aa6b6"/>
+      <rect x="67" y="20" width="266" height="164" fill="#fff"/>
+      <rect x="67" y="20" width="266" height="22" fill="#3D8BFF"/>
+      <g id="ipCall">
+        <rect x="80" y="52" width="115" height="58" rx="6" fill="#ffd9a8"/><rect x="205" y="52" width="115" height="58" rx="6" fill="#b8e0c8"/>
+        <rect x="80" y="118" width="115" height="58" rx="6" fill="#c9d8ff"/><rect x="205" y="118" width="115" height="58" rx="6" fill="#f6c4d4"/>
+        <circle cx="137" cy="76" r="12" fill="#fff" opacity=".8"/><circle cx="262" cy="76" r="12" fill="#fff" opacity=".8"/>
+        <circle cx="137" cy="142" r="12" fill="#fff" opacity=".8"/><circle cx="262" cy="142" r="12" fill="#fff" opacity=".8"/>
+      </g>
+      <path d="M15 200 H385 L365 240 H35 Z" fill="#b3bdca"/>
+      <g fill="#9aa6b6"><rect x="70" y="207" width="260" height="7" rx="2"/><rect x="66" y="217" width="268" height="7" rx="2"/><rect x="62" y="227" width="276" height="7" rx="2"/></g>
+    </svg>
+    <div class="txt">
+      <div class="tag" style="color:#3D8BFF" data-d="0.4">Para estudiantes y el hogar</div>
+      <div class="name" data-d="0.6">IdeaPad</div>
+      <div class="head" data-d="1.0">Para tu día a día.</div>
+      <div class="chips">
+        <div class="chip" data-d="1.6" data-t="right"><i style="background:#3D8BFF"></i>Confiable para clases y trabajo</div>
+        <div class="chip" data-d="1.9" data-t="right"><i style="background:#3D8BFF"></i>Precio accesible</div>
+        <div class="chip" data-d="2.2" data-t="right"><i style="background:#3D8BFF"></i>Todo lo que necesitas, sin pagar de más</div>
+      </div>
+    </div>
+  </div>
+  <div class="pos" style="color:#3D8BFF" data-d="2.6">Posicionamiento · calidad / precio + por uso</div>
+</section>
+
+<!-- 8. Cierre -->
+<section class="scene" data-start="38.2" data-end="45">
+  <div class="bg" style="background:radial-gradient(circle at 50% 40%,#1a1a1a,#000 70%)"></div>
+  <div class="center">
+    <div class="grid">
+      <div class="card" data-d="0.2" style="background:#151515;border-top:5px solid #E2231A"><b>ThinkPad</b><small>Profesionales<br>y empresas</small></div>
+      <div class="card" data-d="0.4" style="background:#08111f;border-top:5px solid #00E5FF"><b>Legion</b><small>Gamers<br>exigentes</small></div>
+      <div class="card" data-d="0.6" style="background:#06170e;border-top:5px solid #39FF88"><b>LOQ</b><small>Gaming<br>accesible</small></div>
+      <div class="card" data-d="0.8" style="background:#2a2418;border-top:5px solid #C9A46A"><b>Yoga</b><small>Diseño y<br>creatividad</small></div>
+      <div class="card" data-d="1.0" style="background:#0b1a33;border-top:5px solid #3D8BFF"><b>IdeaPad</b><small>Estudio y<br>hogar</small></div>
+    </div>
+    <div style="margin-top:56px" data-d="2.0" data-t="scale"><span class="logo sm">Lenovo</span></div>
+    <div class="claim" style="font-size:28px;margin-top:22px" data-d="2.6">Smarter technology for all</div>
+    <div class="mid" style="font-size:20px;margin-top:10px" data-d="3.2">Tecnología confiable, a buen precio, para cada persona.</div>
+  </div>
+</section>
+
+<script src="engine.js"></script>
+<script>
+window.custom = t => {
+  // ThinkPad: barras crecen
+  document.querySelectorAll('#tpBars rect').forEach((r, i) => {
+    const p = ease((t - 9.6 - i * 0.15) / 0.6);
+    r.style.transformOrigin = 'center 170px'; r.style.transformBox = 'view-box';
+    r.style.transform = `scaleY(${p})`;
+  });
+  // Legion: pulso de neón
+  const pulse = 0.5 + 0.5 * Math.sin(t * 7);
+  const core = document.getElementById('lgCore'); core.setAttribute('r', 10 + 10 * pulse);
+  document.getElementById('lgLines').style.opacity = 0.4 + 0.6 * pulse;
+  document.getElementById('lgKeys').style.filter = `hue-rotate(${t * 120}deg)`;
+  // LOQ: barras de carga
+  const ws = [220, 170, 120];
+  document.querySelectorAll('#loqBars rect').forEach((r, i) => r.setAttribute('width', ws[i] * ease((t - 22.2 - i * 0.3) / 1.2)));
+  // Yoga: tapa gira (modo 2 en 1) y trazo de dibujo
+  const lid = document.getElementById('ygLid');
+  const a = Math.sin(clamp((t - 28.5) / 2.2) * Math.PI) * 28;
+  lid.style.transform = `perspective(600px) rotateX(${a}deg)`;
+  document.getElementById('ygStroke').setAttribute('stroke-dashoffset', 420 * (1 - ease((t - 27.6) / 2.5)));
+  // IdeaPad: videollamada aparece
+  document.querySelectorAll('#ipCall rect').forEach((r, i) => { r.style.opacity = ease((t - 33.6 - i * 0.2) / 0.4); });
+};
+render(0);
+</script>
+</body></html>
