@@ -36,6 +36,15 @@ body{width:1280px;height:720px;overflow:hidden;background:#000;font-family:Inter
 .photo .shine{-webkit-mask-image:var(--m);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;
   background:linear-gradient(110deg,transparent 40%,rgba(255,255,255,.55) 50%,transparent 60%);background-size:300% 100%;background-position:150% 0}
 .mini{width:100%;height:110px;object-fit:contain;filter:drop-shadow(0 8px 10px rgba(0,0,0,.5))}
+.vbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.glass{position:absolute;top:50%;margin-top:-210px;width:520px;padding:34px 40px;border-radius:26px;
+  background:rgba(12,14,22,.14);border:1px solid rgba(255,255,255,.24);
+  backdrop-filter:blur(14px) saturate(1.25);-webkit-backdrop-filter:blur(14px) saturate(1.25);
+  box-shadow:0 24px 60px rgba(0,0,0,.28);text-shadow:0 2px 12px rgba(0,0,0,.45)}
+.glass .name{font-size:82px}
+.glass .head{font-size:30px;margin-bottom:22px}
+.glass .chip{font-size:20px}
+.pos2{margin-top:24px;display:inline-block;white-space:nowrap;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:7px 14px;border:1px solid currentColor;border-radius:30px;background:rgba(0,0,0,.18)}
 </style></head><body>
 
 <!-- 1. Apertura -->
@@ -65,97 +74,62 @@ body{width:1280px;height:720px;overflow:hidden;background:#000;font-family:Inter
 
 <!-- 3. ThinkPad -->
 <section class="scene" data-start="8.6" data-end="15.2">
-  <div class="bg" style="background:radial-gradient(circle at 25% 50%,#1e1e1e,#050505 70%)"></div>
-  <div class="split">
-    <div class="art" data-d="0.1" data-t="left" data-dur="1"><div class="photo" id="ph-thinkpad" style="--m:url(img/thinkpad.png)"><div class="glow" style="background:#E2231A"></div><div class="float"><div class="rig"><img class="l-base" src="img/thinkpad_base.png"><img class="l-lid" src="img/thinkpad_tapa.png"><img class="l-back" src="img/thinkpad_tapa_atras.png"><div class="shine"></div></div></div></div></div>
-    <div class="txt">
-      <div class="tag" style="color:#E2231A" data-d="0.4">Para profesionales y empresas</div>
-      <div class="name" data-d="0.6">ThinkPad</div>
-      <div class="head" data-d="1.0">Para quienes no pueden fallar.</div>
-      <div class="chips">
-        <div class="chip" data-d="1.6" data-t="right"><i style="background:#E2231A"></i>Durabilidad con pruebas de grado militar</div>
-        <div class="chip" data-d="1.9" data-t="right"><i style="background:#E2231A"></i>Seguridad empresarial</div>
-        <div class="chip" data-d="2.2" data-t="right"><i style="background:#E2231A"></i>Teclado legendario y TrackPoint</div>
-      </div>
-    </div>
+  <img class="vbg" id="vb-thinkpad" src="vid/frames/thinkpad/0000.jpg">
+  <div class="glass" style="right:70px" data-d="0.5" data-t="right" data-dur="0.9">
+    <div class="tag" style="color:#ff5a52" data-d="0.7">Para profesionales y empresas</div>
+    <div class="name" style="" data-d="0.8">ThinkPad</div>
+    <div class="head" data-d="1.0">Para quienes no pueden fallar.</div>
+    <div class="chips"><div class="chip" data-d="1.4" data-t="right"><i style="background:#ff5a52"></i>Durabilidad con pruebas de grado militar</div><div class="chip" data-d="1.7" data-t="right"><i style="background:#ff5a52"></i>Seguridad empresarial</div><div class="chip" data-d="2.0" data-t="right"><i style="background:#ff5a52"></i>Teclado legendario y TrackPoint</div></div>
+    <div class="pos2" style="color:#ff5a52" data-d="2.4">Posicionamiento · Por usuario + por atributos</div>
   </div>
-  <div class="pos" style="color:#E2231A" data-d="2.8">Posicionamiento · por usuario + por atributos</div>
 </section>
 
 <!-- 4. Legion -->
 <section class="scene" data-start="15" data-end="21.4">
-  <div class="bg" style="background:radial-gradient(circle at 75% 50%,#0b2340,#02040a 70%)"></div>
-  <div class="split rev">
-    <div class="art" data-d="0.1" data-t="right" data-dur="1"><div class="photo" id="ph-legion" style="--m:url(img/legion.png)"><div class="glow" style="background:#00E5FF"></div><div class="float"><div class="rig"><img class="l-base" src="img/legion_base.png"><img class="l-lid" src="img/legion_tapa.png"><img class="l-back" src="img/legion_tapa_atras.png"><div class="shine"></div></div></div></div></div>
-    <div class="txt">
-      <div class="tag" style="color:#00E5FF" data-d="0.4">Para gamers exigentes</div>
-      <div class="name" data-d="0.6" style="background:linear-gradient(90deg,#00E5FF,#FF2BD6);-webkit-background-clip:text;color:transparent">Legion</div>
-      <div class="head" data-d="1.0">Para los que juegan en serio.</div>
-      <div class="chips">
-        <div class="chip" data-d="1.6" data-t="left"><i style="background:#00E5FF"></i>Máximo rendimiento</div>
-        <div class="chip" data-d="1.9" data-t="left"><i style="background:#7B2BFF"></i>Refrigeración avanzada</div>
-        <div class="chip" data-d="2.2" data-t="left"><i style="background:#FF2BD6"></i>Pantallas de alta frecuencia</div>
-      </div>
-    </div>
+  <img class="vbg" id="vb-legion" src="vid/frames/legion/0000.jpg">
+  <div class="glass" style="left:70px" data-d="0.5" data-t="left" data-dur="0.9">
+    <div class="tag" style="color:#00E5FF" data-d="0.7">Para gamers exigentes</div>
+    <div class="name" style="background:linear-gradient(90deg,#00E5FF,#FF2BD6);-webkit-background-clip:text;color:transparent" data-d="0.8">Legion</div>
+    <div class="head" data-d="1.0">Para los que juegan en serio.</div>
+    <div class="chips"><div class="chip" data-d="1.4" data-t="left"><i style="background:#00E5FF"></i>Máximo rendimiento</div><div class="chip" data-d="1.7" data-t="left"><i style="background:#00E5FF"></i>Refrigeración avanzada</div><div class="chip" data-d="2.0" data-t="left"><i style="background:#00E5FF"></i>Pantallas de alta frecuencia</div></div>
+    <div class="pos2" style="color:#00E5FF" data-d="2.4">Posicionamiento · Por usuario + por estilo de vida</div>
   </div>
-  <div class="pos" style="color:#00E5FF;left:auto;right:80px" data-d="2.8">Posicionamiento · por usuario + por estilo de vida</div>
 </section>
 
 <!-- 5. LOQ -->
 <section class="scene" data-start="21.2" data-end="26.8">
-  <div class="bg" style="background:radial-gradient(circle at 25% 50%,#06331f,#020a06 70%)"></div>
-  <div class="split">
-    <div class="art" data-d="0.1" data-t="left" data-dur="1"><div class="photo" id="ph-loq" style="--m:url(img/loq.png)"><div class="glow" style="background:#39FF88"></div><div class="float"><div class="rig"><img class="l-base" src="img/loq_base.png"><img class="l-lid" src="img/loq_tapa.png"><img class="l-back" src="img/loq_tapa_atras.png"><div class="shine"></div></div></div></div></div>
-    <div class="txt">
-      <div class="tag" style="color:#39FF88" data-d="0.4">Para quienes empiezan a jugar</div>
-      <div class="name" data-d="0.6" style="color:#39FF88">LOQ</div>
-      <div class="head" data-d="1.0">Tu entrada al gaming.</div>
-      <div class="chips">
-        <div class="chip" data-d="1.6" data-t="right"><i style="background:#39FF88"></i>Potencia gamer real</div>
-        <div class="chip" data-d="1.9" data-t="right"><i style="background:#39FF88"></i>Precio accesible</div>
-        <div class="chip" data-d="2.2" data-t="right"><i style="background:#39FF88"></i>Tecnología heredada de Legion</div>
-      </div>
-    </div>
+  <img class="vbg" id="vb-loq" src="vid/frames/loq/0000.jpg">
+  <div class="glass" style="right:70px" data-d="0.5" data-t="right" data-dur="0.9">
+    <div class="tag" style="color:#39FF88" data-d="0.7">Para quienes empiezan a jugar</div>
+    <div class="name" style="color:#39FF88" data-d="0.8">LOQ</div>
+    <div class="head" data-d="1.0">Tu entrada al gaming.</div>
+    <div class="chips"><div class="chip" data-d="1.4" data-t="right"><i style="background:#39FF88"></i>Potencia gamer real</div><div class="chip" data-d="1.7" data-t="right"><i style="background:#39FF88"></i>Precio accesible</div><div class="chip" data-d="2.0" data-t="right"><i style="background:#39FF88"></i>Tecnología heredada de Legion</div></div>
+    <div class="pos2" style="color:#39FF88" data-d="2.4">Posicionamiento · Por calidad / precio</div>
   </div>
-  <div class="pos" style="color:#39FF88" data-d="2.6">Posicionamiento · por calidad / precio</div>
 </section>
 
 <!-- 6. Yoga -->
 <section class="scene" data-start="26.6" data-end="32.8">
-  <div class="bg" style="background:linear-gradient(135deg,#f7f1e8,#e7dccb)"></div>
-  <div class="split rev" style="color:#2b2418">
-    <div class="art" data-d="0.1" data-t="right" data-dur="1"><div class="photo" id="ph-yoga" style="--m:url(img/yoga.png)"><div class="glow" style="background:#C9A46A"></div><div class="float"><div class="rig"><img class="l-base" src="img/yoga_base.png"><img class="l-lid" src="img/yoga_tapa.png"><img class="l-back" src="img/yoga_tapa_atras.png"><div class="shine"></div></div></div></div></div>
-    <div class="txt">
-      <div class="tag" style="color:#a07a3c" data-d="0.4">Para creativos con estilo</div>
-      <div class="name" data-d="0.6" style="font-weight:300;letter-spacing:-1px">Yoga</div>
-      <div class="head" data-d="1.0">Para los que crean sin límites.</div>
-      <div class="chips">
-        <div class="chip" data-d="1.6" data-t="left"><i style="background:#C9A46A"></i>Diseño premium</div>
-        <div class="chip" data-d="1.9" data-t="left"><i style="background:#C9A46A"></i>2 en 1: laptop, tablet, carpa</div>
-        <div class="chip" data-d="2.2" data-t="left"><i style="background:#C9A46A"></i>Ligera y elegante</div>
-      </div>
-    </div>
+  <img class="vbg" id="vb-yoga" src="vid/frames/yoga/0000.jpg">
+  <div class="glass" style="right:70px" data-d="0.5" data-t="right" data-dur="0.9">
+    <div class="tag" style="color:#ffe2a8" data-d="0.7">Para creativos con estilo</div>
+    <div class="name" style="font-weight:300;letter-spacing:-1px" data-d="0.8">Yoga</div>
+    <div class="head" data-d="1.0">Para los que crean sin límites.</div>
+    <div class="chips"><div class="chip" data-d="1.4" data-t="right"><i style="background:#ffe2a8"></i>Diseño premium</div><div class="chip" data-d="1.7" data-t="right"><i style="background:#ffe2a8"></i>2 en 1: laptop, tablet, carpa</div><div class="chip" data-d="2.0" data-t="right"><i style="background:#ffe2a8"></i>Ligera y elegante</div></div>
+    <div class="pos2" style="color:#ffe2a8" data-d="2.4">Posicionamiento · Por estilo de vida + por atributos</div>
   </div>
-  <div class="pos" style="color:#a07a3c;left:auto;right:80px" data-d="2.8">Posicionamiento · por estilo de vida + por atributos</div>
 </section>
 
 <!-- 7. IdeaPad -->
 <section class="scene" data-start="32.6" data-end="38.4">
-  <div class="bg" style="background:linear-gradient(135deg,#e9f2ff,#cfe2ff)"></div>
-  <div class="split" style="color:#0f2547">
-    <div class="art" data-d="0.1" data-t="left" data-dur="1"><div class="photo" id="ph-ideapad" style="--m:url(img/ideapad.png)"><div class="glow" style="background:#3D8BFF"></div><div class="float"><div class="rig"><img class="l-base" src="img/ideapad_base.png"><img class="l-lid" src="img/ideapad_tapa.png"><img class="l-back" src="img/ideapad_tapa_atras.png"><div class="shine"></div></div></div></div></div>
-    <div class="txt">
-      <div class="tag" style="color:#3D8BFF" data-d="0.4">Para estudiantes y el hogar</div>
-      <div class="name" data-d="0.6">IdeaPad</div>
-      <div class="head" data-d="1.0">Para tu día a día.</div>
-      <div class="chips">
-        <div class="chip" data-d="1.6" data-t="right"><i style="background:#3D8BFF"></i>Confiable para clases y trabajo</div>
-        <div class="chip" data-d="1.9" data-t="right"><i style="background:#3D8BFF"></i>Precio accesible</div>
-        <div class="chip" data-d="2.2" data-t="right"><i style="background:#3D8BFF"></i>Todo lo que necesitas, sin pagar de más</div>
-      </div>
-    </div>
+  <img class="vbg" id="vb-ideapad" src="vid/frames/ideapad/0000.jpg">
+  <div class="glass" style="right:70px" data-d="0.5" data-t="right" data-dur="0.9">
+    <div class="tag" style="color:#8fc2ff" data-d="0.7">Para estudiantes y el hogar</div>
+    <div class="name" style="" data-d="0.8">IdeaPad</div>
+    <div class="head" data-d="1.0">Para tu día a día.</div>
+    <div class="chips"><div class="chip" data-d="1.4" data-t="right"><i style="background:#8fc2ff"></i>Confiable para clases y trabajo</div><div class="chip" data-d="1.7" data-t="right"><i style="background:#8fc2ff"></i>Precio accesible</div><div class="chip" data-d="2.0" data-t="right"><i style="background:#8fc2ff"></i>Todo lo que necesitas, sin pagar de más</div></div>
+    <div class="pos2" style="color:#8fc2ff" data-d="2.4">Posicionamiento · Por calidad / precio + por uso</div>
   </div>
-  <div class="pos" style="color:#3D8BFF" data-d="2.6">Posicionamiento · por calidad / precio + por uso</div>
 </section>
 
 <!-- 8. Cierre -->
@@ -177,48 +151,17 @@ body{width:1280px;height:720px;overflow:hidden;background:#000;font-family:Inter
 
 <script src="engine.js"></script>
 <script>
-const LAP = {"thinkpad": {"H1": [77, 344], "H2": [509, 344], "O1": [77, 53], "O2": [509, 53], "F1": [30, 522], "F2": [556, 522], "color": [28, 28, 30], "W": 584, "H": 584}, "legion": {"H1": [30, 248], "H2": [253, 252], "O1": [35, 23], "O2": [258, 52], "F1": [130, 472], "F2": [352, 418], "color": [40, 42, 48], "W": 374, "H": 500}, "loq": {"H1": [146, 253], "H2": [385, 297], "O1": [198, 93], "O2": [438, 100], "F1": [5, 290], "F2": [255, 375], "color": [110, 113, 118], "W": 447, "H": 447}, "yoga": {"H1": [92, 300], "H2": [272, 197], "O1": [17, 82], "O2": [232, 39], "F1": [275, 408], "F2": [432, 252], "color": [140, 142, 146], "W": 447, "H": 447}, "ideapad": {"H1": [68, 314], "H2": [392, 292], "O1": [62, 27], "O2": [393, 60], "F1": [172, 555], "F2": [522, 485], "color": [118, 120, 126], "W": 584, "H": 584}};
-function homog(s, d) {  // perspectiva que lleva el cuadrilátero s al d
-  const A = [], b = [];
-  for (let i = 0; i < 4; i++) { const [x, y] = s[i], [u, v] = d[i];
-    A.push([x, y, 1, 0, 0, 0, -u * x, -u * y]); b.push(u);
-    A.push([0, 0, 0, x, y, 1, -v * x, -v * y]); b.push(v); }
-  for (let c = 0; c < 8; c++) {
-    let p = c; for (let r = c + 1; r < 8; r++) if (Math.abs(A[r][c]) > Math.abs(A[p][c])) p = r;
-    [A[c], A[p]] = [A[p], A[c]]; [b[c], b[p]] = [b[p], b[c]];
-    for (let r = 0; r < 8; r++) if (r !== c) { const f = A[r][c] / A[c][c];
-      for (let k = c; k < 8; k++) A[r][k] -= f * A[c][k]; b[r] -= f * b[c]; } }
-  const h = b.map((v, i) => v / A[i][i]);
-  return `matrix3d(${h[0]},${h[3]},0,${h[6]},${h[1]},${h[4]},0,${h[7]},0,0,1,0,${h[2]},${h[5]},0,1)`;
-}
+const VIDEO = { thinkpad: [8.6, 200], legion: [15, 194], loq: [21.2, 170], yoga: [26.6, 188], ideapad: [32.6, 176] };
 window.custom = t => {
-  const escenas = { thinkpad: 8.6, legion: 15, loq: 21.2, yoga: 26.6, ideapad: 32.6 };
-  for (const [n, st] of Object.entries(escenas)) {
-    const ph = document.getElementById('ph-' + n), lt = t - st, L = LAP[n];
-    if (lt < -0.5 || lt > 7.5) continue;
-    const k = Math.min(560 / L.W, 460 / L.H), rig = ph.querySelector('.rig');
-    rig.style.width = L.W + 'px'; rig.style.height = L.H + 'px';
-    rig.style.transform = `translate(${(560 - L.W * k) / 2}px,${(460 - L.H * k) / 2}px) scale(${k})`;
-    let rot = '';
-    if (n === 'yoga') rot = `perspective(900px) rotateY(${-18 + 30 * ease(lt / 5)}deg)`;
-    if (n === 'thinkpad') rot = `scale(${0.96 + 0.06 * ease(lt / 5)})`;
-    ph.querySelector('.float').style.transform = `translateY(${Math.sin(lt * 1.6) * 8}px) ${rot}`;
-    // apertura de la tapa: la esquina superior recorre un arco desde el frente de la base
-    const th = Math.PI / 2 * ease((lt - 0.9) / 1.5);
-    const P = (H, F, O) => [0, 1].map(i => H[i] + Math.cos(th) * (F[i] - H[i]) + Math.sin(th) * (O[i] - H[i]));
-    const M = homog([L.H1, L.H2, L.O2, L.O1], [L.H1, L.H2, P(L.H2, L.F2, L.O2), P(L.H1, L.F1, L.O1)]);
-    const lid = ph.querySelector('.l-lid'), back = ph.querySelector('.l-back');
-    lid.style.transform = back.style.transform = M;
-    const deg = th * 180 / Math.PI;
-    back.style.opacity = 1 - clamp((deg - 30) / 30);
-    lid.style.filter = `brightness(${0.15 + 0.85 * ease((lt - 2.3) / 0.6)})`;
-    // brillo que recorre la laptop ya abierta
-    ph.querySelector('.shine').style.backgroundPosition = `${150 - clamp((lt - 2.9) / 1.3) * 200}% 0`;
-    const g = ph.querySelector('.glow');
-    const kk = (n === 'legion' || n === 'loq') ? 0.35 + 0.3 * (0.5 + 0.5 * Math.sin(lt * 6)) : 0.3 + 0.12 * Math.sin(lt * 2);
-    g.style.opacity = kk * ease((lt - 2.3) / 1.2);
-    if (n === 'legion') g.style.filter = `blur(70px) hue-rotate(${lt * 90}deg)`;
+  const esperas = [];
+  for (const [n, [st, cnt]] of Object.entries(VIDEO)) {
+    const lt = t - st; if (lt < -0.6 || lt > 7) continue;
+    const img = document.getElementById('vb-' + n);
+    const f = String(Math.max(0, Math.min(cnt - 1, Math.round(lt * 30)))).padStart(4, '0');
+    const src = `vid/frames/${n}/${f}.jpg`;
+    if (!img.src.endsWith(src)) { img.src = src; esperas.push(img.decode().catch(() => {})); }
   }
+  return Promise.all(esperas);
 };
 render(0);
 </script>

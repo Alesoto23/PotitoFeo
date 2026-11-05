@@ -24,6 +24,6 @@ function render(t) {
       el.style.transform = tr;
     });
   });
-  if (window.custom) window.custom(t);
+  if (window.custom) return window.custom(t);
 }
 window.render = render;
